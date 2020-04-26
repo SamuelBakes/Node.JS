@@ -29,14 +29,14 @@ if(url === '/Wishlist' && method === 'POST'){
         const Last_Name = unparsed_Last_Name.split('&')[0];
         const unparsed_Wish = parsedBody.split('=')[3];
         const Wish = unparsed_Wish.split('&')[0];
-        const Letter = `Dear Santa,\nI would Like a brand new ${Wish} for Christmas. I've been really good, and I want this most of all.\nThank you very much,\n${First_Name} ${Last_Name}`;
+        const Letter = `Dear Santa,\nI would like a brand new ${Wish} for Christmas. I've been really good, and I want this most of all.\nThank you very much,\n${First_Name} ${Last_Name}`;
         fs.writeFileSync(`${First_Name} ${Last_Name}'s Letter To Santa`, Letter);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
         res.write('<html><head><title>Santa\'s Site</title></head>');
         res.write('<body><h1>Letter Sent!</h1>');
         res.write('<h2>Your Letter Reads:</h2>');
-        res.write(`<p>Dear Santa,\nI would Like a brand new ${Wish} for Christmas. I've been really good, and I want this most of all.\nThank you very much,\n${First_Name} ${Last_Name}</p></body>`);
+        res.write(`<p>Dear Santa,\nI would like a brand new ${Wish} for Christmas. I've been really good, and I want this most of all.\nThank you very much,\n${First_Name} ${Last_Name}</p></body>`);
     });
         //res.statusCode = 200;
         //res.setHeader('Content-Type', 'text/html');
